@@ -3,6 +3,10 @@
 
 ```
 to_romain(n: int) -> str
-- 1 -> "I"
-- 5 -> "V"
-- 10 -> "X"
+
+- Test simples
+    - 1 -> "I"
+    - 5 -> "V"
+    - 10 -> "X"
+-Test que suman números de mayor a menor
+    -
