@@ -20,7 +20,7 @@ def test_1_a_9():
     assert to_roman(8) == "VIII"
     assert to_roman(9) == "IX"
 
-def test_11_a_19():
+def test_11_a_20():
     assert to_roman(11) == "XI"
     assert to_roman(12) == "XII"
     assert to_roman(13) == "XIII"
@@ -30,8 +30,9 @@ def test_11_a_19():
     assert to_roman(17) == "XVII"
     assert to_roman(18) == "XVIII"
     assert to_roman(19) == "XIX"
+    assert to_roman(20) == "XX"
 
-def test_21_a_29():
+def test_21_a_30():
     assert to_roman(21) == "XXI"
     assert to_roman(22) == "XXII"
     assert to_roman(23) == "XXIII"
@@ -41,6 +42,7 @@ def test_21_a_29():
     assert to_roman(27) == "XXVII"
     assert to_roman(28) == "XXVIII"
     assert to_roman(29) == "XXIX"
+    assert to_roman(30) == "XXX"
 
 def test_31_a_39():
     assert to_roman(31) == "XXXI"
@@ -55,12 +57,12 @@ def test_31_a_39():
 
 def test_40_a_49():
     assert to_roman(40) == "XL"
-    assert to_roman(31) == "XLI"
-    assert to_roman(32) == "XLII"
-    assert to_roman(33) == "XLIII"
-    assert to_roman(34) == "XLIV"
-    assert to_roman(35) == "XLV"
-    assert to_roman(36) == "XLVI"
-    assert to_roman(37) == "XLVII"
-    assert to_roman(38) == "XLVIII"
-    assert to_roman(39) == "XLXI" 
+    assert to_roman(41) == "XLI"
+    assert to_roman(42) == "XLII"
+    assert to_roman(43) == "XLIII"
+    assert to_roman(44) == "XLIV"
+    assert to_roman(45) == "XLV"
+    assert to_roman(46) == "XLVI"
+    assert to_roman(47) == "XLVII"
+    assert to_roman(48) == "XLVIII"
+    assert to_roman(49) == "XLIX" 

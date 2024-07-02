@@ -19,8 +19,6 @@ def romano_simples(n):
         result = valors[5] + (n-5)* valors[1]
     elif n == 9:
         result = valors[1] + valors[10]
-    else:
-        result = valors[n]
     
 
     return result
@@ -30,8 +28,14 @@ def romano_simples(n):
 def to_roman(n):
     result = ""
     acum = 0
+    if n >= 50:
+          result = valors[n]
+
+    elif n >= 40 :
+        n = n-40
+        result = valors[10] + valors[50] + romano_simples(n)
     
-    if n >10 :
+    elif  n < 40 :
         while n >= 10:
             n = n-10
             acum += 1 
@@ -41,7 +45,5 @@ def to_roman(n):
     elif n <= 10:
         result = romano_simples(n)
 
-
-
     return result
-        
+
