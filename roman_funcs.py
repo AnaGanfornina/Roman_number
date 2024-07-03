@@ -8,7 +8,7 @@ valors = {
     1000: "M"
     }
 
-def romano_simples(n):
+def to_roman(n):
     # Números del 1 al 9
     result = ""
     if n <= 3:
@@ -20,30 +20,21 @@ def romano_simples(n):
     elif n == 9:
         result = valors[1] + valors[10]
     
-
-    return result
-
-
-
-def to_roman(n):
-    result = ""
-    acum = 0
-    if n >= 50:
-          result = valors[n]
-
-    elif n >= 40 :
-        n = n-40
-        result = valors[10] + valors[50] + romano_simples(n)
-    
-    elif  n < 40 :
-        while n >= 10:
-            n = n-10
-            acum += 1 
+    elif n <=30:
+        result =  (n//10) * valors[10]
+    elif n == 40:
+        result = valors[10] + valors[50]
+    elif n < 90:
+        result = valors [50] + (n - 50)//10 * valors[10]
+    elif  n == 90:
+        result = valors[10] + valors[100]
         
-        result = (valors[10] * acum ) + romano_simples(n)
+    else:
+        result = valors[n]
     
-    elif n <= 10:
-        result = romano_simples(n)
 
     return result
 
+
+
+to_roman(50)
