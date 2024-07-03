@@ -19,6 +19,7 @@ def to_roman(n):
         result = valors[5] + (n-5)* valors[1]
     elif n == 9:
         result = valors[1] + valors[10]
+
     
     elif n <=30:
         result =  (n//10) * valors[10]
@@ -28,6 +29,19 @@ def to_roman(n):
         result = valors [50] + (n - 50)//10 * valors[10]
     elif  n == 90:
         result = valors[10] + valors[100]
+    
+
+    elif n <= 300:
+        result = n//100 * valors[100]
+    elif n == 400:
+        result = valors[100] + valors[500]
+    elif n < 900:
+        result= valors[500] + (n-500)//100 * valors[100]
+    elif n == 900:
+        result = valors[100] + valors[1000]
+
+    elif n <= 3000:
+        result = n//1000 * valors[1000]
         
     else:
         result = valors[n]
@@ -35,6 +49,27 @@ def to_roman(n):
 
     return result
 
+def dividir_en_digitos(n:int):
+    cad = f"{n:04d}"
+
+    millares = int(cad[0]) * 1000
+    centenas = int(cad[1]) * 100
+    decenas = int(cad[2]) * 10
+    unidades = int(cad[3]) * 1
+
+    return [millares,centenas,decenas,unidades]
+
+def digits_to_roman(lista):
+    result = ""
+
+    for item in lista:
+        result += to_roman(item)
+
+    return result
+    
+def arabigo_a_romano(numero:int):
+    
+    lista = dividir_en_digitos(numero)
+    return digits_to_roman(lista)
 
 
-to_roman(50)
