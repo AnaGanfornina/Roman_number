@@ -7,44 +7,29 @@ valors = {
     500: "D",
     1000: "M"
     }
+def divide_digitos(n):
+   
+    orden = 10**(len(str(n))-1)
+    d = n//orden
+
+    return d,orden
+
 
 def to_roman(n):
+    d,orden  = divide_digitos(n)
+    
+
     # Números del 1 al 9
     result = ""
-    if n <= 3:
-        result = n * valors[1]
-    elif n == 4:
-        result = valors[1] + valors[5]
-    elif n < 9:
-        result = valors[5] + (n-5)* valors[1]
-    elif n == 9:
-        result = valors[1] + valors[10]
+    if d <= 3:
+        result = d * valors[orden]
+    elif d == 4:
+        result = valors[orden] + valors[5 * orden] 
+    elif d < 9:
+        result = valors[5 * orden] + (d-5)* valors[orden]
+    elif d == 9:
+        result = valors[orden] + valors[orden * 10]
 
-    
-    elif n <=30:
-        result =  (n//10) * valors[10]
-    elif n == 40:
-        result = valors[10] + valors[50]
-    elif n < 90:
-        result = valors [50] + (n - 50)//10 * valors[10]
-    elif  n == 90:
-        result = valors[10] + valors[100]
-    
-
-    elif n <= 300:
-        result = n//100 * valors[100]
-    elif n == 400:
-        result = valors[100] + valors[500]
-    elif n < 900:
-        result= valors[500] + (n-500)//100 * valors[100]
-    elif n == 900:
-        result = valors[100] + valors[1000]
-
-    elif n <= 3000:
-        result = n//1000 * valors[1000]
-        
-    else:
-        result = valors[n]
     
 
     return result
@@ -73,3 +58,4 @@ def arabigo_a_romano(numero:int):
     return digits_to_roman(lista)
 
 
+to_roman(50)
